@@ -663,17 +663,18 @@ pub fn migrate_legacy_collection_info(
         Some(_) => Ok(response),
         None => {
             // contract info is legacy collection info
-            let legacy_collection_info_store: Item<cw721_016::ContractInfoResponse> =
-                Item::new("nft_info");
-            let legacy_collection_info = legacy_collection_info_store.load(storage)?;
-            let collection_info = CollectionInfo {
-                name: legacy_collection_info.name.clone(),
-                symbol: legacy_collection_info.symbol.clone(),
-            };
-            contract.collection_info.save(storage, &collection_info)?;
-            Ok(response
-                .add_attribute("migrated collection name", legacy_collection_info.name)
-                .add_attribute("migrated collection symbol", legacy_collection_info.symbol))
+            // let legacy_collection_info_store: Item<cw721_016::ContractInfoResponse> =
+            //     Item::new("nft_info");
+            // let legacy_collection_info = legacy_collection_info_store.load(storage)?;
+            // let collection_info = CollectionInfo {
+            //     name: legacy_collection_info.name.clone(),
+            //     symbol: legacy_collection_info.symbol.clone(),
+            // };
+            // contract.collection_info.save(storage, &collection_info)?;
+            Ok(
+                response, // .add_attribute("migrated collection name", legacy_collection_info.name)
+                         // .add_attribute("migrated collection symbol", legacy_collection_info.symbol)
+            )
         }
     }
 }
