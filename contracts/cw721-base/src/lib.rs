@@ -4,6 +4,9 @@ pub mod msg;
 pub mod query;
 pub mod state;
 
+#[cfg(not(target_arch = "wasm32"))]
+pub mod interface;
+
 pub use crate::state::Cw721Contract;
 
 // These types are re-exported so that contracts interacting with this

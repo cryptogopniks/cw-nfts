@@ -3,33 +3,34 @@ members = ["packages/*", "contracts/*"]
 resolver = "2"
 
 [workspace.package]
-version       = "0.18.3"
-edition       = "2021"
-license       = "Apache-2.0"
-repository    = "https://github.com/CosmWasm/cw-nfts"
-homepage      = "https://cosmwasm.com"
+version = "0.18.3"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/CosmWasm/cw-nfts"
+homepage = "https://cosmwasm.com"
 documentation = "https://docs.cosmwasm.com"
-rust-version  = "1.75"
+rust-version = "1.75"
 
 [workspace.dependencies]
 cosmwasm-schema = "2.2.0"
-cosmwasm-std    = "2.2.0"
-cw2             = "2.0.0"
-cw20            = "2.0.0"
-cw721           = { version = "*", path = "./packages/cw721" }
-cw721-base      = { version = "*", path = "./contracts/cw721-base" }
-cw-multi-test   = "2.3.0"
-cw-ownable      = { git = "https://github.com/cryptogopniks/cw-plus-plus", branch = "v2.2.0"}
+cosmwasm-std = "2.2.0"
+cw2 = "2.0.0"
+cw20 = "2.0.0"
+cw721 = { version = "*", path = "./packages/cw721" }
+cw721-base = { version = "*", path = "./contracts/cw721-base" }
+cw-multi-test = "2.3.0"
+cw-orch = "0.27.0"
+cw-ownable = { git = "https://github.com/cryptogopniks/cw-plus-plus", branch = "v2.2.0" }
 cw-storage-plus = "2.0.0"
-cw-utils        = { git = "https://github.com/cryptogopniks/cw-minus", branch = "v2.2.0"}
-schemars        = "^0.8"
-serde           = { version = "1.0.163", default-features = false, features = ["derive"] }
-thiserror       = "^1.0"
+cw-utils = { git = "https://github.com/cryptogopniks/cw-minus", branch = "v2.2.0" }
+schemars = "^0.8"
+serde = { version = "1.0.163", default-features = false, features = ["derive"] }
+thiserror = "^1.0"
 
 [profile.release]
-rpath            = false
-lto              = true
-overflow-checks  = true
-opt-level        = 3
-debug            = false
+rpath = false
+lto = true
+overflow-checks = true
+opt-level = 3
+debug = false
 debug-assertions = false

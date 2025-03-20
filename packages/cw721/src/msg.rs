@@ -7,6 +7,7 @@ use crate::state::CollectionInfo;
 use crate::Approval;
 
 #[cw_serde]
+#[derive(cw_orch::ExecuteFns)] // Function generation
 pub enum Cw721ExecuteMsg<TMetadataExtension, TMetadataExtensionMsg> {
     UpdateOwnership(Action),
 
@@ -98,7 +99,7 @@ pub struct Cw721InstantiateMsg {
 }
 
 #[cw_serde]
-#[derive(QueryResponses)]
+#[derive(QueryResponses, cw_orch::QueryFns)] // Function generation
 pub enum Cw721QueryMsg<TMetadataExtension> {
     /// Return the owner of the given token, error if token does not exist
     #[returns(OwnerOfResponse)]
